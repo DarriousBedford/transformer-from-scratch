@@ -57,7 +57,6 @@ class AttentionModel(nn.Module):
         logits = self.lm_head(x)             # (B, T, 65)
 
                 # look up each char's row of scores → (B, T, C)
-       
         if targets is None:                      # when generating text, there's no answer to compare to
             return logits, None
 
